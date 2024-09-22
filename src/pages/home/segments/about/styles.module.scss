@@ -1,0 +1,97 @@
+@import "/src/styles/common";
+
+.wrapper {
+  margin: 50px;
+  .title {
+    font-weight: 600;
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .about-me {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      animation: avatar-animation 6s linear infinite;
+    }
+    .info {
+      min-width: 80%;
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        .name {
+          font-size: 1.5rem;
+        }
+        .job {
+          color: $blur-text-color;
+        }
+      }
+      .intro {
+        .skills {
+          display: inline-flex;
+          flex-wrap: wrap;
+          row-gap: 10px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes avatar-animation {
+  0% {
+    position: relative;
+    margin-left: 0;
+    transform: rotate(0deg);
+  }
+  10% {
+    position: relative;
+    margin-left: 0;
+    transform: rotate(180deg);
+  }
+  50% {
+    position: relative;
+    margin-left: 100px;
+    transform: rotate(180deg);
+  }
+  60% {
+    position: relative;
+    transform: rotate(0deg);
+  }
+  100% {
+    position: relative;
+    margin-left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    margin: 20px;
+    .title {
+    }
+    .about-me {
+      display: flex;
+      flex-direction: column;
+      .avatar {
+      }
+      .info {
+        .user-info {
+          .name {
+          }
+          .job {
+          }
+        }
+        .intro {
+        }
+      }
+    }
+  }
+}

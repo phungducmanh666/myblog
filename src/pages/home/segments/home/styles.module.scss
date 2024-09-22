@@ -1,0 +1,63 @@
+@import "/src/styles/common";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 100px;
+  .info {
+    padding: 20px;
+
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 20px;
+    .common-info {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      .hi {
+        color: $blur-text-color;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .name {
+        font-size: 3rem;
+        font-weight: 600;
+      }
+      .skill {
+        font-size: 1.2rem;
+        color: $blur-text-color;
+      }
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .banner {
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    .info {
+      width: 100%;
+    }
+    .banner {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import "/src/styles/common";
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  box-shadow: 1px 1px 3px gray;
+  .logo {
+    width: map-get($map: $square-sizes, $key: lg);
+    height: map-get($map: $square-sizes, $key: lg);
+  }
+  .menus {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.2s;
+
+    .close-menu-icon {
+      display: none;
+    }
+    .menu {
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 10px;
+      &:hover {
+        background-color: orange;
+      }
+    }
+  }
+  .menu-icon {
+    display: none;
+    width: map-get($map: $square-sizes, $key: sm);
+    height: map-get($map: $square-sizes, $key: sm);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 10px;
+    .logo {
+      width: map-get($map: $square-sizes, $key: md);
+      height: map-get($map: $square-sizes, $key: md);
+    }
+    .menus {
+      position: fixed;
+      left: 100vw;
+      top: 0;
+      background-color: white;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 10px;
+
+      z-index: 1;
+
+      .close-menu-icon {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: calc(map-get($map: $square-sizes, $key: md));
+        width: map-get($map: $square-sizes, $key: md);
+        height: map-get($map: $square-sizes, $key: md);
+      }
+
+      &.active {
+        left: 0;
+      }
+
+      .menu {
+        padding: 5px;
+        &:hover {
+          background-color: rgb(208, 208, 208);
+        }
+      }
+    }
+    .menu-icon {
+      display: block;
+      width: map-get($map: $square-sizes, $key: md);
+      height: map-get($map: $square-sizes, $key: md);
+    }
+  }
+}

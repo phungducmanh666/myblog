@@ -1,0 +1,23 @@
+@import "/src/styles/common";
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 5px 10px;
+  gap: 10px;
+  .icon {
+    > * {
+      width: map-get($map: $square-sizes, $key: sm);
+      height: map-get($map: $square-sizes, $key: sm);
+    }
+  }
+  .info {
+    .title {
+      font-weight: 600;
+    }
+    .description {
+    }
+  }
+}
